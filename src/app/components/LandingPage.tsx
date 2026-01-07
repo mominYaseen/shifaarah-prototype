@@ -132,7 +132,7 @@ export function LandingPage() {
             <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600">
               <span className="text-white text-xl">S</span>
             </div>
-            <span className="text-2xl">Shifaarah</span>
+            <span className="text-2xl">Shifarah</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
