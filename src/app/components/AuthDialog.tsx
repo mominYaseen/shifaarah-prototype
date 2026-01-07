@@ -62,7 +62,7 @@ export function AuthDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl">Welcome to Shifaarah</DialogTitle>
+          <DialogTitle className="text-2xl">Welcome to Shifarah</DialogTitle>
           <DialogDescription>
             Sign in or create an account to continue with your appointment
           </DialogDescription>

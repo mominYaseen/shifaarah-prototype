@@ -103,8 +103,10 @@ export function LoginPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="text-4xl text-blue-600">🏥</div>
-            <span className="text-3xl text-gray-900">Shifaarah</span>
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600">
+              <span className="text-white text-xl">S</span>
+            </div>
+            <span className="text-2xl">Shifarah</span>
           </div>
           <p className="text-gray-600">Unified Healthcare Platform</p>
         </div>

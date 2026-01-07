@@ -181,7 +181,7 @@ export function TestPrescriptionDetails() {
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-start gap-2">
               <span className="text-blue-600 mt-1">•</span>
-              <span>You can book these tests at any registered diagnostic lab on Shifaarah.</span>
+              <span>You can book these tests at any registered diagnostic lab on Shifarah.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-blue-600 mt-1">•</span>

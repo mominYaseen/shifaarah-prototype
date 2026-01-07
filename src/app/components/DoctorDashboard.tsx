@@ -64,9 +64,11 @@ export function DoctorDashboard() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="text-2xl text-teal-600">🏥</div>
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600">
+              <span className="text-white text-xl">S</span>
+            </div>
               <div>
-                <span className="text-xl text-gray-900">Shifaarah</span>
+                <span className="text-xl text-gray-900">Shifarah</span>
                 <p className="text-sm text-gray-600">Doctor Dashboard</p>
               </div>
             </div>

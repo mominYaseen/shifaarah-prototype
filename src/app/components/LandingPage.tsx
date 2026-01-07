@@ -453,7 +453,7 @@ export function LandingPage() {
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-600">
                   <span className="text-white text-lg">S</span>
                 </div>
-                <span className="text-xl">Shifaarah</span>
+                <span className="text-xl">Shifarah</span>
               </div>
               <p className="text-sm text-gray-600">
                 Your trusted healthcare partner for finding and
@@ -526,7 +526,7 @@ export function LandingPage() {
             </div>
           </div>
           <div className="border-t pt-8 text-center text-sm text-gray-600">
-            <p>&copy; 2026 Shifaarah. All rights reserved.</p>
+            <p>&copy; 2026 Shifarah. All rights reserved.</p>
           </div>
         </div>
       </footer>
