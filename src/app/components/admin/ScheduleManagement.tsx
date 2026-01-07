@@ -132,13 +132,16 @@ export function ScheduleManagement() {
             Set working hours and consultation slots
           </p>
         </div>
-        <Button
-          className="bg-blue-600 hover:bg-blue-700"
-          onClick={() => setDialogOpen(true)}
-        >
-          <Plus className="mr-2 h-4 w-4" />
-          Add Schedule
-        </Button>
+        <div className="flex flex-col items-end gap-1">
+          <Button
+            className="bg-blue-600 hover:bg-blue-700 opacity-60"
+            disabled
+          >
+            <Plus className="mr-2 h-4 w-4" />
+            Add Schedule
+          </Button>
+          <span className="text-xs text-gray-400">Coming Soon</span>
+        </div>
       </div>
 
       {/* Schedules by Doctor */}
@@ -174,8 +177,9 @@ export function ScheduleManagement() {
                     <Button
                       size="icon"
                       variant="ghost"
-                      className="h-8 w-8"
-                      onClick={() => handleDelete(schedule.id)}
+                      className="h-8 w-8 opacity-60"
+                      disabled
+                      title="Coming Soon"
                     >
                       <Trash2 className="h-4 w-4 text-red-600" />
                     </Button>

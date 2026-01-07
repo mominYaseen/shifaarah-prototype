@@ -51,10 +51,13 @@ export function DoctorManagement() {
           <h2 className="text-2xl text-gray-900">Doctor Management</h2>
           <p className="text-sm text-gray-600">Manage your healthcare professionals</p>
         </div>
-        <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleAddNew}>
-          <Plus className="mr-2 h-4 w-4" />
-          Add Doctor
-        </Button>
+        <div className="flex flex-col items-end gap-1">
+          <Button className="bg-blue-600 hover:bg-blue-700 opacity-60" disabled>
+            <Plus className="mr-2 h-4 w-4" />
+            Add Doctor
+          </Button>
+          <span className="text-xs text-gray-400">Coming Soon</span>
+        </div>
       </div>
 
       {/* Doctors Grid */}
@@ -72,16 +75,18 @@ export function DoctorManagement() {
                   <Button
                     size="icon"
                     variant="secondary"
-                    className="h-8 w-8 bg-white/90"
-                    onClick={() => handleEdit(doctor.id)}
+                    className="h-8 w-8 bg-white/90 opacity-60"
+                    disabled
+                    title="Coming Soon"
                   >
                     <Edit className="h-4 w-4" />
                   </Button>
                   <Button
                     size="icon"
                     variant="secondary"
-                    className="h-8 w-8 bg-white/90"
-                    onClick={() => handleDelete(doctor.id)}
+                    className="h-8 w-8 bg-white/90 opacity-60"
+                    disabled
+                    title="Coming Soon"
                   >
                     <Trash2 className="h-4 w-4 text-red-600" />
                   </Button>

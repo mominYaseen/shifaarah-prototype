@@ -1,7 +1,22 @@
-import { Shield, Star, CreditCard, Search, TrendingUp } from "lucide-react";
+import {
+  Shield,
+  Star,
+  CreditCard,
+  Search,
+  TrendingUp,
+  TestTube,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import { useState } from "react";
 
 // Disease trend data (2015-2025)
@@ -114,10 +129,13 @@ const diseaseData = {
 
 export function LandingPage() {
   const navigate = useNavigate();
-  const [selectedDisease, setSelectedDisease] = useState<keyof typeof diseaseData>("Diabetes");
+  const [selectedDisease, setSelectedDisease] =
+    useState<keyof typeof diseaseData>("Diabetes");
 
   const scrollToAnalytics = () => {
-    const analyticsSection = document.getElementById("analytics-section");
+    const analyticsSection = document.getElementById(
+      "analytics-section",
+    );
     if (analyticsSection) {
       analyticsSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -134,23 +152,37 @@ export function LandingPage() {
             </div>
             <span className="text-2xl">Shifarah</span>
           </div>
+
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <a
+              href="#"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
               Find Doctors
             </a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <a
+              href="#"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
               For Doctors
             </a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <a
+              href="#"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
               Help
-            </a>
-            <a href="/admin" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Admin
             </a>
           </nav>
           <div className="flex items-center gap-3">
-            <Button variant="ghost">Sign In</Button>
-            <Button className="bg-blue-600 hover:bg-blue-700">Sign Up</Button>
+            <Button
+              variant="ghost"
+              onClick={() => navigate("/login")}
+            >
+              Sign In
+            </Button>
+            <Button className="bg-blue-600 hover:bg-blue-700">
+              Sign Up
+            </Button>
           </div>
         </div>
       </header>
@@ -161,10 +193,14 @@ export function LandingPage() {
           <h1 className="text-4xl md:text-6xl mb-6 text-gray-900">
             Book Trusted Doctors.
             <br />
-            <span className="text-blue-600">Understand Health Trends.</span>
+            <span className="text-blue-600">
+              Understand Health Trends.
+            </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Connect with verified healthcare professionals and stay informed about public health trends. Make data-driven decisions for your wellbeing.
+            Connect with verified healthcare professionals and
+            stay informed about public health trends. Make
+            data-driven decisions for your wellbeing.
           </p>
 
           {/* CTAs */}
@@ -176,6 +212,14 @@ export function LandingPage() {
             >
               <Search className="mr-2 h-6 w-6" />
               Book a Doctor
+            </Button>
+            <Button
+              size="lg"
+              className="bg-purple-600 hover:bg-purple-700 text-xl px-12 py-8 w-full max-w-md"
+              onClick={() => navigate("/patient/labs")}
+            >
+              <TestTube className="mr-2 h-6 w-6" />
+              Explore Labs
             </Button>
             <Button
               size="lg"
@@ -194,9 +238,12 @@ export function LandingPage() {
               <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
                 <Shield className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="mb-2 text-gray-900">Verified Doctors</h3>
+              <h3 className="mb-2 text-gray-900">
+                Verified Doctors
+              </h3>
               <p className="text-sm text-gray-600 text-center">
-                All healthcare professionals are thoroughly verified and licensed
+                All healthcare professionals are thoroughly
+                verified and licensed
               </p>
             </div>
 
@@ -204,9 +251,12 @@ export function LandingPage() {
               <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
                 <Star className="h-6 w-6 text-green-600" />
               </div>
-              <h3 className="mb-2 text-gray-900">Patient Reviews</h3>
+              <h3 className="mb-2 text-gray-900">
+                Patient Reviews
+              </h3>
               <p className="text-sm text-gray-600 text-center">
-                Read genuine reviews from verified patients to make informed decisions
+                Read genuine reviews from verified patients to
+                make informed decisions
               </p>
             </div>
 
@@ -214,9 +264,12 @@ export function LandingPage() {
               <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
                 <CreditCard className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="mb-2 text-gray-900">Secure Payments</h3>
+              <h3 className="mb-2 text-gray-900">
+                Secure Payments
+              </h3>
               <p className="text-sm text-gray-600 text-center">
-                Your payment information is protected with bank-level security
+                Your payment information is protected with
+                bank-level security
               </p>
             </div>
           </div>
@@ -271,28 +324,40 @@ export function LandingPage() {
       </section>
 
       {/* Disease Analytics Section */}
-      <section className="bg-gradient-to-b from-white to-blue-50 py-16 md:py-24 border-t" id="analytics-section">
+      <section
+        className="bg-gradient-to-b from-white to-blue-50 py-16 md:py-24 border-t"
+        id="analytics-section"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl text-center mb-4 text-gray-900">
               Disease Prevalence Trends Over Time
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Explore how common diseases have evolved over the years to promote awareness and early action.
+              Explore how common diseases have evolved over the
+              years to promote awareness and early action.
             </p>
 
             {/* Analytics Card */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
               {/* Disease Selector */}
               <div className="mb-8">
-                <label htmlFor="disease-select" className="block mb-3 text-gray-700">
+                <label
+                  htmlFor="disease-select"
+                  className="block mb-3 text-gray-700"
+                >
                   Select Disease
                 </label>
                 <select
                   id="disease-select"
                   className="w-full max-w-md px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white"
                   value={selectedDisease}
-                  onChange={(e) => setSelectedDisease(e.target.value as keyof typeof diseaseData)}
+                  onChange={(e) =>
+                    setSelectedDisease(
+                      e.target
+                        .value as keyof typeof diseaseData,
+                    )
+                  }
                 >
                   {Object.keys(diseaseData).map((disease) => (
                     <option key={disease} value={disease}>
@@ -307,36 +372,60 @@ export function LandingPage() {
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={diseaseData[selectedDisease]}
-                    margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                    margin={{
+                      top: 20,
+                      right: 30,
+                      left: 20,
+                      bottom: 20,
+                    }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                    <XAxis 
-                      dataKey="year" 
-                      stroke="#6b7280"
-                      style={{ fontSize: '14px' }}
-                      label={{ value: 'Year', position: 'insideBottom', offset: -10, style: { fill: '#6b7280' } }}
+                    <CartesianGrid
+                      strokeDasharray="3 3"
+                      stroke="#e5e7eb"
                     />
-                    <YAxis 
+                    <XAxis
+                      dataKey="year"
                       stroke="#6b7280"
-                      style={{ fontSize: '14px' }}
-                      label={{ value: 'Prevalence Rate (per 100,000)', angle: -90, position: 'insideLeft', style: { fill: '#6b7280' } }}
+                      style={{ fontSize: "14px" }}
+                      label={{
+                        value: "Year",
+                        position: "insideBottom",
+                        offset: -10,
+                        style: { fill: "#6b7280" },
+                      }}
+                    />
+                    <YAxis
+                      stroke="#6b7280"
+                      style={{ fontSize: "14px" }}
+                      label={{
+                        value: "Prevalence Rate (per 100,000)",
+                        angle: -90,
+                        position: "insideLeft",
+                        style: { fill: "#6b7280" },
+                      }}
                     />
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: '#ffffff',
-                        border: '1px solid #e5e7eb',
-                        borderRadius: '8px',
-                        boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+                        backgroundColor: "#ffffff",
+                        border: "1px solid #e5e7eb",
+                        borderRadius: "8px",
+                        boxShadow:
+                          "0 4px 6px -1px rgb(0 0 0 / 0.1)",
                       }}
-                      formatter={(value: number) => [value.toLocaleString(), 'Rate']}
-                      labelFormatter={(label) => `Year: ${label}`}
+                      formatter={(value: number) => [
+                        value.toLocaleString(),
+                        "Rate",
+                      ]}
+                      labelFormatter={(label) =>
+                        `Year: ${label}`
+                      }
                     />
-                    <Line 
-                      type="monotone" 
-                      dataKey="rate" 
-                      stroke="#2563eb" 
+                    <Line
+                      type="monotone"
+                      dataKey="rate"
+                      stroke="#2563eb"
                       strokeWidth={3}
-                      dot={{ fill: '#2563eb', r: 5 }}
+                      dot={{ fill: "#2563eb", r: 5 }}
                       activeDot={{ r: 7 }}
                     />
                   </LineChart>
@@ -346,7 +435,8 @@ export function LandingPage() {
               {/* Disclaimer */}
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="text-sm text-gray-500 text-center">
-                  Data shown is for demonstration and awareness purposes only.
+                  Data shown is for demonstration and awareness
+                  purposes only.
                 </p>
               </div>
             </div>
@@ -363,39 +453,80 @@ export function LandingPage() {
                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-600">
                   <span className="text-white text-lg">S</span>
                 </div>
-                <span className="text-xl">Shifarah</span>
+                <span className="text-xl">Shifaarah</span>
               </div>
               <p className="text-sm text-gray-600">
-                Your trusted healthcare partner for finding and booking appointments with verified doctors.
+                Your trusted healthcare partner for finding and
+                booking appointments with verified doctors.
               </p>
             </div>
             <div>
-              <h4 className="mb-4 text-gray-900">For Patients</h4>
+              <h4 className="mb-4 text-gray-900">
+                For Patients
+              </h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-blue-600">Find Doctors</a></li>
-                <li><a href="#" className="hover:text-blue-600">Book Appointment</a></li>
-                <li><a href="#" className="hover:text-blue-600">Health Library</a></li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Find Doctors
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Book Appointment
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Health Library
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
-              <h4 className="mb-4 text-gray-900">For Doctors</h4>
+              <h4 className="mb-4 text-gray-900">
+                For Doctors
+              </h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-blue-600">Join Network</a></li>
-                <li><a href="#" className="hover:text-blue-600">Doctor Login</a></li>
-                <li><a href="#" className="hover:text-blue-600">Resources</a></li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Join Network
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Doctor Login
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Resources
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="mb-4 text-gray-900">Company</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-blue-600">About Us</a></li>
-                <li><a href="#" className="hover:text-blue-600">Contact</a></li>
-                <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-blue-600">
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t pt-8 text-center text-sm text-gray-600">
-            <p>&copy; 2026 Shifarah. All rights reserved.</p>
+            <p>&copy; 2026 Shifaarah. All rights reserved.</p>
           </div>
         </div>
       </footer>

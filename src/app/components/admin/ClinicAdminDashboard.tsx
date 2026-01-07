@@ -10,10 +10,13 @@ import {
   Stethoscope,
   CalendarCheck,
   Users2,
+  FileText,
+  Lock,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 
 type TabType = "overview" | "appointments" | "availability";
 
@@ -37,11 +40,11 @@ export function ClinicAdminDashboard() {
   };
 
   const todayAppointments = [
-    { id: "1", patientName: "Ahmed Hassan", time: "09:00 AM", status: "confirmed" },
-    { id: "2", patientName: "Sarah Khan", time: "10:00 AM", status: "confirmed" },
-    { id: "3", patientName: "Mohammad Ali", time: "11:00 AM", status: "pending" },
-    { id: "4", patientName: "Fatima Noor", time: "02:00 PM", status: "confirmed" },
-    { id: "5", patientName: "Bilal Shah", time: "03:00 PM", status: "pending" },
+    { id: "1", patientName: "Ahmed Hassan", doctorName: "Dr. Sarah Khan", time: "09:00 AM", date: "2026-01-07" },
+    { id: "2", patientName: "Sarah Khan", doctorName: "Dr. Ahmad Malik", time: "10:00 AM", date: "2026-01-07" },
+    { id: "3", patientName: "Mohammad Ali", doctorName: "Dr. Sarah Khan", time: "11:00 AM", date: "2026-01-07" },
+    { id: "4", patientName: "Fatima Noor", doctorName: "Dr. Irshad Ahmad Khan", time: "02:00 PM", date: "2026-01-07" },
+    { id: "5", patientName: "Bilal Shah", doctorName: "Dr. Ahmad Malik", time: "03:00 PM", date: "2026-01-07" },
   ];
 
   return (
@@ -195,27 +198,19 @@ export function ClinicAdminDashboard() {
                     {todayAppointments.map((appointment) => (
                       <div
                         key={appointment.id}
-                        className="flex items-center justify-between rounded-lg border p-4"
+                        className="flex items-center gap-4 rounded-lg border p-4"
                       >
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-600">
-                            {appointment.patientName[0]}
-                          </div>
-                          <div>
-                            <p className="text-gray-900">{appointment.patientName}</p>
-                            <p className="text-sm text-gray-600">{appointment.time}</p>
-                          </div>
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-600">
+                          {appointment.patientName[0]}
                         </div>
-                        <Badge
-                          variant={appointment.status === "confirmed" ? "secondary" : "default"}
-                          className={
-                            appointment.status === "confirmed"
-                              ? "bg-green-100 text-green-700"
-                              : "bg-orange-100 text-orange-700"
-                          }
-                        >
-                          {appointment.status}
-                        </Badge>
+                        <div className="flex-1">
+                          <p className="text-gray-900">{appointment.patientName}</p>
+                          <p className="text-sm text-gray-600">{appointment.doctorName}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm text-gray-900">{appointment.date}</p>
+                          <p className="text-sm text-gray-600">{appointment.time}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -227,8 +222,8 @@ export function ClinicAdminDashboard() {
           {activeTab === "appointments" && (
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl text-gray-900 mb-1">Appointment Management</h2>
-                <p className="text-gray-600">View and manage all clinic appointments</p>
+                <h2 className="text-2xl text-gray-900 mb-1">Appointments</h2>
+                <p className="text-gray-600">View all clinic appointments (read-only)</p>
               </div>
 
               <Card>
@@ -237,39 +232,18 @@ export function ClinicAdminDashboard() {
                     {todayAppointments.map((appointment) => (
                       <div
                         key={appointment.id}
-                        className="flex items-center justify-between rounded-lg border p-4"
+                        className="flex items-center gap-4 rounded-lg border p-4"
                       >
-                        <div className="flex items-center gap-4 flex-1">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
-                            {appointment.patientName[0]}
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-gray-900">{appointment.patientName}</p>
-                            <p className="text-sm text-gray-600">{appointment.time}</p>
-                          </div>
-                          <Badge
-                            variant={appointment.status === "confirmed" ? "secondary" : "default"}
-                            className={
-                              appointment.status === "confirmed"
-                                ? "bg-green-100 text-green-700"
-                                : "bg-orange-100 text-orange-700"
-                            }
-                          >
-                            {appointment.status}
-                          </Badge>
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
+                          {appointment.patientName[0]}
                         </div>
-                        <div className="flex gap-2 ml-4">
-                          {appointment.status === "pending" && (
-                            <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                              Confirm
-                            </Button>
-                          )}
-                          <Button size="sm" variant="outline">
-                            Reschedule
-                          </Button>
-                          <Button size="sm" variant="outline" className="text-red-600 hover:text-red-700">
-                            Cancel
-                          </Button>
+                        <div className="flex-1">
+                          <p className="text-gray-900">{appointment.patientName}</p>
+                          <p className="text-sm text-gray-600">{appointment.doctorName}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm text-gray-900">{appointment.date}</p>
+                          <p className="text-sm text-gray-600">{appointment.time}</p>
                         </div>
                       </div>
                     ))}

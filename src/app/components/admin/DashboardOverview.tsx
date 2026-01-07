@@ -118,20 +118,22 @@ export function DashboardOverview() {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <Card className="cursor-pointer transition-shadow hover:shadow-lg">
+        <Card className="cursor-not-allowed transition-shadow opacity-60">
           <CardContent className="p-6">
             <h3 className="mb-2 text-lg text-gray-900">Manage Appointments</h3>
             <p className="text-sm text-gray-600">
               View, approve, or reschedule patient appointments
             </p>
+            <p className="text-xs text-gray-400 mt-2">Coming Soon</p>
           </CardContent>
         </Card>
-        <Card className="cursor-pointer transition-shadow hover:shadow-lg">
+        <Card className="cursor-not-allowed transition-shadow opacity-60">
           <CardContent className="p-6">
             <h3 className="mb-2 text-lg text-gray-900">Manage Doctors</h3>
             <p className="text-sm text-gray-600">
               Add, edit, or remove doctors from your facility
             </p>
+            <p className="text-xs text-gray-400 mt-2">Coming Soon</p>
           </CardContent>
         </Card>
       </div>
